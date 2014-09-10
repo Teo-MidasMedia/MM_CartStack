@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <MM_CartStack>
+            <version>1.0</version>
+        </MM_CartStack>
+    </modules>
+    <global>
+        <blocks>
+            <MM_CartStack>
+                <class>MM_CartStack_Block</class>
+            </MM_CartStack>
+        </blocks>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <MM_CartStack>
+                    <file>cartstack.xml</file>
+                </MM_CartStack>
+            </updates>
+        </layout>
+    </frontend>
+</config>
