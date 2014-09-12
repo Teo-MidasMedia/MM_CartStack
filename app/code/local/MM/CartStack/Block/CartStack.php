@@ -80,16 +80,8 @@ class MM_CartStack_Block_CartStack extends Mage_Core_Block_Template{
 		
 		$this->PageType();
 
-		if($this->module == 'contacts' && $this->controller == 'index'){
-			$pageType = 'contact';
-		} elseif($this->module == 'customer' && $this->controller == 'account'){
-			$pageType = 'account';
-		} elseif($this->module == 'checkout' && $this->controller == 'onepage' && $this->action == 'success'){ 
+		if($this->module == 'checkout' && $this->controller == 'onepage' && $this->action == 'success'){ 
 			$pageType = 'success';
-		} elseif($this->module == 'checkout' && $this->controller == 'onepage'){
-			$pageType = 'checkout';
-		} elseif($this->module == 'checkout' && $this->controller == 'cart'){
-			$pageType = 'cart';
 		}
 		
 		if ($pageType === cart) $html .= $this->CartStackCartContents();
@@ -131,9 +123,9 @@ class MM_CartStack_Block_CartStack extends Mage_Core_Block_Template{
 		$cartTotal=$cartData['grand_total']; 
 				
 		$cartItems = $cartContent->getAllVisibleItems();
-        	foreach ($cartItems as $item){
-			$product = Mage::getModel('catalog/product')->load($item->getProductId());
-                        $productId = $item->getProductId();
+        foreach ($cartItems as $item){
+		$product = Mage::getModel('catalog/product')->load($item->getProductId());
+            $productId = $item->getProductId();
 			$productQty = $item->getQty();
 			$productName = $item->getName();
 			$productDescription = $product->getShortDescription();
