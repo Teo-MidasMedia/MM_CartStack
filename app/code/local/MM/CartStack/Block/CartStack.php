@@ -55,9 +55,7 @@ class MM_CartStack_Block_CartStack extends Mage_Core_Block_Template{
 		
 		$this->PageType();
 		
-		if($this->module == 'contacts' && $this->controller == 'index'){
-			$cartStackMethod = 'capture';
-		} elseif($this->module == 'customer' && $this->controller == 'account'){
+		if($this->module == 'contacts' && $this->controller == 'index' || $this->module == 'customer' && $this->controller == 'account'){
 			$cartStackMethod = 'capture';
 		} elseif($this->module == 'checkout' && $this->controller == 'onepage' && $this->action == 'success'){ 
 			$cartStackMethod = 'confirmation';
