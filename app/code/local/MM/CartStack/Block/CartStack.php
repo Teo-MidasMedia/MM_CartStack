@@ -121,9 +121,9 @@ class MM_CartStack_Block_CartStack extends Mage_Core_Block_Template{
 		$cartTotal=$cartData['grand_total']; 
 				
 		$cartItems = $cartContent->getAllVisibleItems();
-        foreach ($cartItems as $item){
-		$product = Mage::getModel('catalog/product')->load($item->getProductId());
-            $productId = $item->getProductId();
+        	foreach ($cartItems as $item){
+			$product = Mage::getModel('catalog/product')->load($item->getProductId());
+            		$productId = $item->getProductId();
 			$productQty = $item->getQty();
 			$productName = $item->getName();
 			$productDescription = $product->getShortDescription();
